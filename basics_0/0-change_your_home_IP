@@ -1,8 +1,3 @@
-#!/bin/bash
-HOSTS_FILE="/etc/hosts"
-if [ "$EUID" -ne 0 ]; then
-    echo "Please perform this script with 'sudo'."
-    exit 1
-fi
-
-echo "The application of configurations required in host file..."
+#!/usr/bin/env bash
+echo "127.0.0.2 localhost" | sudo tee /etc/hosts >/dev/null
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts >/dev/null
