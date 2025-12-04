@@ -1,0 +1,8 @@
+#!/bin/bash
+HOSTS_FILE="/etc/hosts"
+if [ "$EUID" -ne 0 ]; then
+    echo "Please perform this script with 'sudo'."
+    exit 1
+fi
+
+echo "The application of configurations required in host file..."
